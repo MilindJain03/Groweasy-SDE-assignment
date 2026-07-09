@@ -1,0 +1,77 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 32px 0 40px;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.active .icon {
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.active .label { color: var(--accent2); }
+
+.done .icon {
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--success);
+}
+.done .label { color: var(--success); }
+
+.connector {
+  width: 80px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 8px;
+  margin-bottom: 24px;
+  border-radius: 1px;
+  transition: background 0.3s ease;
+}
+.connDone { background: var(--success); }
+
+@media (max-width: 600px) {
+  .connector { width: 32px; }
+  .label { font-size: 10px; }
+  .icon { width: 36px; height: 36px; font-size: 13px; }
+}
